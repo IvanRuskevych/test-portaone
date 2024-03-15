@@ -5,12 +5,6 @@ function getArrayOfNumbers(filename) {
     const data = fs.readFileSync(filename, 'utf8');
     const numbers = data.split('\n').map((num) => parseInt(num));
 
-    // console.log('numbers.length', numbers.length);
-    // console.log(
-    //     'isNaN: ',
-    //     numbers.filter((num) => isNaN(num))
-    // );
-
     if (!numbers.length) return console.log('Numbers not found');
 
     return numbers.filter((num) => !isNaN(num));
@@ -41,7 +35,6 @@ function findMin(numbers) {
 /* Task 3: calculate median */
 function findMedian(numbers) {
     const sortedNumbers = numbers.slice().sort((a, b) => a - b);
-    // console.log('sortedNumbers.length', sortedNumbers.length);
     const indexMiddleNumber = Math.floor(sortedNumbers.length / 2);
     const indexPrevNumber = indexMiddleNumber - 1;
 
